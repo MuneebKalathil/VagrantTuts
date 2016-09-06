@@ -82,5 +82,31 @@ Find ```config.vm.box = "base"``` in the file and remove ```base``` with the box
 ```shell 
 $ vagrant up
 ```
+<b>5) File sharing with vagrant box </b><br>
+The current folder ```vagrantbox``` in the host system & ```/vagrant``` in the box is synced.<br>
+Goto your folder and create some files.<br>
+```shell
+$ cd vagrantbox
+$ ls
+Vagrantfile
+$ touch 1 2 3
+$ ls
+1  2  3  Vagrantfile
+```
+Now ssh into box & check the folder.
+```shell
+$ vagrant ssh
+vagrant@precise64:~$ ls /vagrant/
+1  2  3  Vagrantfile
+```
 
-
+Create some files and check from the host system<br>
+```shell
+vagrant@precise64:~$ cd /vagrant/
+vagrant@precise64:~$ touch 4 5 6
+vagrant@precise64:~$ ls 
+1  2  3  4  5  6  Vagrantfile
+vagrant@precise64:~$ exit
+$ ls
+$ 1  2  3  4  5  6  Vagrantfile
+```

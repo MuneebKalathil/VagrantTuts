@@ -57,8 +57,10 @@ vagrant box remove <box name>
 $ vagrant box remove hashicorp/precise64
 ```
 <b>4) Add the box </b><br>
-After removing the box, You need to add the box again. Use ```vagrant up```. This will download the file again using ```Vagrantfile```.
+After removing the box, You need to add the box again.<br>
+Use ```vagrant up```. This will download the file again using ```Vagrantfile```.<br>
 If there is no Vagrantfile, You need to use ```vagrant init``` & ```vagrant box add```<br>
+```vagrant box add``` is another way of adding box.
 ```shell
 $ vagrant init
 $ vagrant box add hashicorp/precise64

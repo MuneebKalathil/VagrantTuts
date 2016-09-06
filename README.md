@@ -28,13 +28,13 @@ It may take some time depending upon your net. It is actually downloading ```Ubu
 After finishing Downloads & all the process., a new box will be added to Virtual Box.<br>
 So we created our first box.<br><br>
 <b>3) Entering to VM</b><br>
-From same folder, run<br>
-```shell
+From same folder, run
+```
 $ vagrant ssh
-```<br>
+```
 Now, you will be successfully entered into the box. You can execute various commands inside the box.<br>
 * Shut down the box<br>
-```shell
+```
 $ vagrant halt
 ```
 * Power on the box<br>

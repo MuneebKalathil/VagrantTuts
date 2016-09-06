@@ -51,4 +51,34 @@ $ vagrant destroy
 ```
 Note: This will not remove the box. we can start the box again using ```vagrant up``` <br>
 
+* Removing the Box
+```shell
+vagrant box remove <box name>
+$ vagrant box remove hashicorp/precise64
+```
+<b>4) Add the box </b><br>
+After removing the box, You need to add the box again. Use ```vagrant up```. This will download the file again using ```Vagrantfile```.
+If there is no Vagrantfile, You need to use ```vagrant init``` & ```vagrant box add```<br>
+```shell
+$ vagrant init
+$ vagrant box add hashicorp/precise64
+```
+This will show multiple providers. We are using virtual box here. So enter 2.
+```shell
+This box can work with multiple providers! The providers that it
+can work with are listed below. Please review the list and choose
+the provider you will be working with.
+
+1) hyperv
+2) virtualbox
+3) vmware_fusion
+
+Enter your choice: 2
+```
+Before using ```vagrant up```, You need to edit the ```Vagrantfile```
+Find ```config.vm.box = "base"``` in the file and remove ```base``` with the box name```config.vm.box = "hashicorp/precise64"``` and run<br>
+```shell 
+$ vagrant up
+```
+
 

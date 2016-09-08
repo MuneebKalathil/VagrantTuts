@@ -110,3 +110,50 @@ vagrant@precise64:~$ exit
 $ ls
 $ 1  2  3  4  5  6  Vagrantfile
 ```
+<b>6) Provisioning </b><br>
+* Installing Softwares.<br>
+So, Now we created a base box. We want to create a box with some softwares already installed. Here are the steps.<br>
+i) Create and move to new folder.
+```shell
+$ mkdir vagrantbox1
+$ cd vagrantbox1
+```
+ii) Initialize
+```shell
+$ vagrant init
+```
+iii) Edit Vagrantfile
+```shell
+$ nano Vagrantfile
+```
+change ```config.vm.box = "base"``` to ```config.vm.box = "hashicorp/precise64"```
+Now, go to the end of the file and find,
+```shell
+# Enable provisioning with a shell script. Additional provisioners such as
+  # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
+  # documentation for more information about their specific syntax and use.
+  # config.vm.provision "shell", inline: <<-SHELL
+  #   apt-get update
+  #   apt-get install -y apache2
+  # SHELL
+```
+Uncomment last 4 Lines & make necessary changes.<br>
+```shell
+    config.vm.provision "shell", inline: <<-SHELL
+      apt-get update
+      apt-get install -y vim
+      apt-get install -y tmux
+    SHELL
+```
+```apt-get update``` will update package repos. ```apt-get install -y``` install apps without any confirmation.<br>
+Here we are using provisioning with shell. We can also use other methods.<br>
+
+After editing, Save it and run <br>
+```$ vagrant up``` and enter in to the box<br>
+```$ vagrant ssh```
+After entering in to the box, check whether the software is installed or not.<br>
+```shell
+vagrant@precise64:~$ vim
+vagrant@precise64:~$ tmux
+```
+

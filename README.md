@@ -113,6 +113,7 @@ $ 1  2  3  4  5  6  Vagrantfile
 <b>6) Provisioning </b><br>
 * Installing Softwares.<br>
 So, Now we created a base box. We want to create a box with some softwares already installed. Here are the steps.<br>
+
 i) Create and move to new folder.
 ```shell
 $ mkdir vagrantbox1

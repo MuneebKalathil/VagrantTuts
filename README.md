@@ -149,6 +149,7 @@ Uncomment last 4 Lines & make necessary changes.<br>
 ```apt-get update``` will update package repos. ```apt-get install -y``` install apps without any confirmation.<br>
 Here we are using provisioning with shell. We can also use other methods.<br>
 
+iv) Run the System<br>
 After editing, Save it and run <br>
 ```$ vagrant up``` and enter in to the box<br>
 ```$ vagrant ssh```
@@ -157,4 +158,4 @@ After entering in to the box, check whether the software is installed or not.<br
 vagrant@precise64:~$ vim
 vagrant@precise64:~$ tmux
 ```
-
+In this way, we can execute various shell commands.
